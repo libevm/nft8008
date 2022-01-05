@@ -6,8 +6,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
-import "hardhat/console.sol";
-
 contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
     using SafeERC20 for IERC20;
 
@@ -100,6 +98,9 @@ contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
         "F.P. Journe",
         "Philippe Dufour",
         "80085",
+        "Paradigm",
+        "Polychain",
+        "FTX",
         "Degen",
         "DeFi Summer",
         "Apes",
@@ -256,9 +257,9 @@ contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
             bytes(
                 string(
                     abi.encodePacked(
-                        '{"name": "Watch #',
+                        '{"name": "Clock #',
                         Utils.toString(tokenId),
-                        '", "description": "We like watches.", "image": "data:image/svg+xml;base64,',
+                        '", "description": "Clock8008 is a collection of 8008 (functioning) clocks that you can own in the metaverse. They are crafted with scrupulous attention to detail, while throwing back to the analogue clocks. Re-defining timekeeping in the metaverse while being a timeless staple.", "image": "data:image/svg+xml;base64,',
                         Base64.encode(bytes(output)),
                         '"}'
                     )
@@ -280,7 +281,7 @@ contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
 
     function mint(uint256 tokenId) public payable nonReentrant {
         // 0.1 ETH to mint
-        require(msg.value >= 1e17, "Watches don't come free!");
+        require(msg.value >= 1e17, "Timekeeping aint free!");
         require(tokenId > 0 && tokenId < 8001, "Token ID invalid");
         _safeMint(_msgSender(), tokenId);
     }
