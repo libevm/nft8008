@@ -259,7 +259,7 @@ contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
                     abi.encodePacked(
                         '{"name": "Clock #',
                         Utils.toString(tokenId),
-                        '", "description": "Clock8008 is a collection of 8008 (functioning) clocks that you can own in the metaverse. They are crafted with scrupulous attention to detail, while throwing back to the analogue clocks. Re-defining timekeeping in the metaverse while being a timeless staple.", "image": "data:image/svg+xml;base64,',
+                        '", "description": "Clock8008 is a collection of 8008 (functioning) clocks that you can own in the metaverse. They are crafted with scrupulous attention to detail, while throwing back to the analogue clocks. Clock8008 redefines timekeeping in the metaverse while being a timeless staple.", "image": "data:image/svg+xml;base64,',
                         Base64.encode(bytes(output)),
                         '"}'
                     )
@@ -291,7 +291,7 @@ contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
         _safeMint(owner(), tokenId);
     }
 
-    function withdraw(address recipient) public onlyOwner {
+    function withdrawETH(address recipient) public onlyOwner {
         recipient.call{value: address(this).balance}("");
     }
 
