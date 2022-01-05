@@ -100,6 +100,7 @@ contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
         "80085",
         "Paradigm",
         "Polychain",
+        "Sino",
         "FTX",
         "Degen",
         "DeFi Summer",
@@ -186,7 +187,7 @@ contract Clock8008 is ERC721Enumerable, ReentrancyGuard, Ownable {
 
         parts[
             0
-        ] = '<svg xmlns="http://www.w3.org/2000/svg" class="clock" viewBox="0 0 100 100"> <style> * {';
+        ] = '<svg xmlns="http://www.w3.org/2000/svg" class="clock" viewBox="0 0 100 100" style="width:420px;height:420px;"> <style> * {';
 
         parts[1] = string(
             abi.encodePacked("--color-primary: ", colors[0], ";")
