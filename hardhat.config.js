@@ -29,5 +29,12 @@ module.exports = {
     },
   },
   networks: {
+    hardhat: {
+      forking: {
+        enabled: true,
+        url: process.env['REMOTE_URL'] ? process.env['REMOTE_URL'] : 'http://127.0.0.1:8545'
+      },
+      chainId: 1
+    }
   }
 };
